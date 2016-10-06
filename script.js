@@ -1,14 +1,18 @@
 window.onload = function() {
-
+var response = prompt("What size grid do you want? Ex/ if you want a 4x4 grid, enter: '4'");
 var container = document.createElement("article");
 var startButton = document.createElement("button");
 startButton.innerHTML = "Push to Start Over";
 document.body.appendChild(startButton);
 document.body.appendChild(container);
 var i = 1;
-for (i; i <=24; i++){
+var gridSize = response * response;
+var setWidth = (100/response) + "%";
+for (i; i <=gridSize; i++){
   var div = document.createElement("div");
-  div.style.cssText = "width: 25%; height: 100px; background: rgb(0,0,0); color: white; display: flex; justify-content: center; align-items: center; float: left; border: 1px white solid; box-sizing: border-box;"
+
+  div.style.cssText = "height: 100px; background: rgb(0,0,0); color: white; display: flex; justify-content: center; align-items: center; float: left; border: 1px white solid; box-sizing: border-box;"
+  div.style.width = setWidth;
   div.innerHTML = "<p>Shiloh</p>";
   div.setAttribute("id", "box" + i);
   container.appendChild(div);
@@ -38,6 +42,7 @@ startButton.addEventListener("click", function(){
   var kk=0;
   for (kk; kk<= childs.length; kk++){
     childs[kk].style.background = "black";
+    childs[kk].firstElementChild.style.background = "black";
   }
 })
 }
