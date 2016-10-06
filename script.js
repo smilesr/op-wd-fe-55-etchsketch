@@ -1,14 +1,26 @@
 window.onload = function() {
-  var response = prompt("What size grid do you want? Ex/ if you want a 4x4 grid, enter: '4'");
+  alert("Hover your cursor over the game board to change the tile colors.  But first indicate what size game board you want.");
+  var response = prompt("The higher the number of tiles the more like an etch-a-sketch it will be. Please enter a number between 1 and 100.");
   var container = document.createElement("article");
   container.style.cssText = "width: 640px; height: 640px; margin: 0 auto"
   var startButton = document.createElement("button");
-  startButton.innerHTML = "Clear";
+  startButton.innerHTML = "Clear Board";
+  var refreshButton = document.createElement("button");
+  refreshButton.innerHTML = "New Board";
+  refreshButton.style.width = "100px";
+  refreshButton.addEventListener("click",function(){
+    location.reload();
+  });
+  document.body.appendChild(refreshButton);
 
   document.body.appendChild(startButton);
-  startButton.style.marginLeft = "48%";
-  startButton.style.marginRight = "52%";
+  startButton.style.marginLeft = "46%";
+  startButton.style.marginRight = "54%";
   startButton.style.marginBottom = "10px";
+  refreshButton.style.marginLeft = "46%";
+  refreshButton.style.marginRight = "54%";
+  refreshButton.style.marginBottom = "10px";
+  startButton.style.width = "100px";
   document.body.appendChild(container);
   var i = 1;
   var gridSize = response * response;
