@@ -1,29 +1,26 @@
 window.onload = function() {
   var response = prompt("What size grid do you want? Ex/ if you want a 4x4 grid, enter: '4'");
   var container = document.createElement("article");
+  container.style.cssText = "width: 640px; height: 640px; margin: 0 auto"
   var startButton = document.createElement("button");
-  startButton.innerHTML = "Push to Start Over";
+  startButton.innerHTML = "Clear";
+
   document.body.appendChild(startButton);
+  startButton.style.marginLeft = "48%";
+  startButton.style.marginRight = "52%";
+  startButton.style.marginBottom = "10px";
   document.body.appendChild(container);
   var i = 1;
   var gridSize = response * response;
   var setWidth = (100/response) + "%";
+  var setHeight = (100/response) + "%";
   for (i; i <=gridSize; i++){
     var div = document.createElement("div");
 
-    div.style.cssText = "background: rgb(0,0,0); color: white; display: flex; justify-content: center; align-items: center; float: left; box-sizing: border-box;"//border: 1px white solid;
-    if (response > 24 && response < 49){
-      div.style.height = "75px";
-      // div.innerHTML = "<p>SOS</p>";
-    } else if (response >= 49) {
-      div.style.height = "50px";
-      // div.innerHTML = "<p>S</p>";
-    } else {
-      div.style.height = "100px";
-      // div.innerHTML = "<p>Shiloh</p>";
-    }
+    div.style.cssText = "background: rgb(0,0,0); color: white; display: flex; justify-content: center; align-items: center; float: left; box-sizing: border-box"
     div.style.width = setWidth;
-    div.setAttribute("id", "box" + i);
+    div.style.height = setHeight;
+    // div.setAttribute("id", "box" + i);
     container.appendChild(div);
   }
   container.addEventListener("mouseover", changeColor, false);
