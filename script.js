@@ -1,7 +1,9 @@
 window.onload = function() {
-alert("hello");
-var container = document.createElement("article");
 
+var container = document.createElement("article");
+var startButton = document.createElement("button");
+startButton.innerHTML = "Push to Start Over";
+document.body.appendChild(startButton);
 document.body.appendChild(container);
 var i = 1;
 for (i; i <=24; i++){
@@ -23,7 +25,6 @@ function changeColor(e){
   }
   e.stopPropagation();  
 }
-  
 function randomNumberGenerator (){
   var i=0;
   var arr=[];
@@ -32,4 +33,11 @@ function randomNumberGenerator (){
   }
   return arr;
 }
+startButton.addEventListener("click", function(){
+  var childs = container.childNodes;
+  var kk=0;
+  for (kk; kk<= childs.length; kk++){
+    childs[kk].style.background = "black";
+  }
+})
 }
