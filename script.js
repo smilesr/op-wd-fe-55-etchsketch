@@ -11,9 +11,20 @@ var setWidth = (100/response) + "%";
 for (i; i <=gridSize; i++){
   var div = document.createElement("div");
 
-  div.style.cssText = "height: 100px; background: rgb(0,0,0); color: white; display: flex; justify-content: center; align-items: center; float: left; border: 1px white solid; box-sizing: border-box;"
+  div.style.cssText = "background: rgb(0,0,0); color: white; display: flex; justify-content: center; align-items: center; float: left; border: 1px white solid; box-sizing: border-box;"
+  if (response > 24 && response < 49){
+    div.style.height = "75px";
+    div.innerHTML = "<p>SOS</p>";
+  } else if (response >= 49) {
+    div.style.height = "50px";
+    div.innerHTML = "<p>S</p>";
+  } else {
+    div.style.height = "100px";
+    div.innerHTML = "<p>Shiloh</p>";
+  }
+
   div.style.width = setWidth;
-  div.innerHTML = "<p>Shiloh</p>";
+  // div.innerHTML = "<p>Shiloh</p>";
   div.setAttribute("id", "box" + i);
   container.appendChild(div);
 }
