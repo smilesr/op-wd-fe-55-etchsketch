@@ -11,16 +11,16 @@ window.onload = function() {
   for (i; i <=gridSize; i++){
     var div = document.createElement("div");
 
-    div.style.cssText = "background: rgb(0,0,0); color: white; display: flex; justify-content: center; align-items: center; float: left; border: 1px white solid; box-sizing: border-box;"
+    div.style.cssText = "background: rgb(0,0,0); color: white; display: flex; justify-content: center; align-items: center; float: left; box-sizing: border-box;"//border: 1px white solid;
     if (response > 24 && response < 49){
       div.style.height = "75px";
-      div.innerHTML = "<p>SOS</p>";
+      // div.innerHTML = "<p>SOS</p>";
     } else if (response >= 49) {
       div.style.height = "50px";
-      div.innerHTML = "<p>S</p>";
+      // div.innerHTML = "<p>S</p>";
     } else {
       div.style.height = "100px";
-      div.innerHTML = "<p>Shiloh</p>";
+      // div.innerHTML = "<p>Shiloh</p>";
     }
     div.style.width = setWidth;
     div.setAttribute("id", "box" + i);
@@ -49,7 +49,7 @@ window.onload = function() {
     var kk=0;
     for (kk; kk<= childs.length; kk++){
       childs[kk].style.background = "black";
-      childs[kk].firstElementChild.style.background = "black";
+      // childs[kk].firstElementChild.style.background = "black";
     }
   })
 }
