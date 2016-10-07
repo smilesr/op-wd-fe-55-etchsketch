@@ -1,6 +1,6 @@
 window.onload = function() {
-  alert("Hover your cursor over the game board to change the tile colors.  But first indicate what size game board you want.");
-  var response = prompt("The higher the number of tiles the more like an etch-a-sketch it will be. Please enter a number between 1 and 100.");
+  alert("Slowly and smoothly move the cursor across the board to change the board's tile colors.  First, however, select the size of the board tiles you want.");
+  var response = prompt("The higher the number the smaller the tiles.  Please enter a number between 1 and 250.");
   var container = document.createElement("article");
   container.style.cssText = "width: 640px; height: 640px; margin: 0 auto"
   var startButton = document.createElement("button");
